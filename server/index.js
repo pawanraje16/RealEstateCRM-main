@@ -32,12 +32,12 @@ app.use('/api', route);
 console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV === 'production') {
     console.log("0011")
-    console.log(path.join(__dirname, '../client', 'build'))
-    app.use(express.static(path.join(__dirname, '../client', 'build')));
+    console.log(path.join(__dirname, '../Client', 'build'))
+    app.use(express.static(path.join(__dirname, '../Client', 'build')));
 
     // Handle all GET requests to serve the React app
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client', 'build', 'index.html'));
+        res.sendFile(path.join(__dirname, '../Client', 'build', 'index.html'));
     });
 } else {
     // For development or non-production environments, React will handle serving its own static files.
